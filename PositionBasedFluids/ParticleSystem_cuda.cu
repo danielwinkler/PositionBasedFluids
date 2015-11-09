@@ -41,7 +41,7 @@ __device__ float3 gradWPoly6(float3 const &pi, float3 const &pj) {
 		return make_float3(0.0f);
 	}
 
-	float coeff = glm::pow((sp.radius * sp.radius) - (rLen * rLen), 2);
+	float coeff = glm::pow((sp.radius * sp.radius) - (rLen * rLen), 2.f);
 	coeff *= -6 * sp.KPOLY;
 	return r * coeff;
 }

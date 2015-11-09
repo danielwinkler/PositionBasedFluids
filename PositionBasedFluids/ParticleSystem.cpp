@@ -1,5 +1,5 @@
 #include "ParticleSystem.h"
-#include "ParticleSystem.cuh"
+#include "ParticleSystem_cuda.cuh"
 
 using namespace std;
 

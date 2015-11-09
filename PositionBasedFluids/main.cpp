@@ -8,10 +8,14 @@
 
 #define _CRTDBG_MAP_ALLOC
 #include <stdlib.h>
-#include <crtdbg.h>
 
-#include <IL\il.h>
-#include <IL\ilut.h>
+#ifdef _WIN32
+#include <crtdbg.h>
+#endif
+
+#define ILUT_USE_OPENGL
+#include <IL/il.h>
+#include <IL/ilut.h>
 
 #define cudaCheck(x) { cudaError_t err = x; if (err != cudaSuccess) { printf("Cuda error: %d in %s at %s:%d\n", err, #x, __FILE__, __LINE__); assert(0); } }
 
@@ -29,9 +33,11 @@ void handleInput(GLFWwindow* window, ParticleSystem &system, Camera &cam);
 void saveVideo();
 void mainUpdate(ParticleSystem &system, Renderer &render, Camera &cam, tempSolver &tp, solverParams &tempParams);
 
-int main() {
+int main(int argc, char *argv[]) {
 	//Checks for memory leaks in debug mode
+#ifdef _WIN32
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+#endif
 
 	cudaGLSetGLDevice(0);
 

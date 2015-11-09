@@ -11,13 +11,19 @@
 #include "vector_functions.h"
 #include "helper_math.h"
 #include <iostream>
+
+#define GLM_FORCE_RADIANS
 #include <glm/glm.hpp>
 #include <glm/gtx/norm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/matrix_inverse.hpp>
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtc/constants.hpp>
+
 #include <vector>
+
+#ifdef _WIN32
 #include <Windows.h>
+#endif
 
 #endif
