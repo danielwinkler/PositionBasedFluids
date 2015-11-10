@@ -1,3 +1,5 @@
+
+
 CUDA/C++ implementation of several papers in the spirit of developing a small demo similar to Nvidia's FleX framework (https://developer.nvidia.com/physx-flex)
 
 Papers implemented in part or in full:
@@ -17,6 +19,10 @@ Dependencies for the project include:
   - CUDA 7
   - GLM
   - DevIL
+
+**forked from JAGJ10**
+  - Added Linux build (Nsight 7.5 project)
+  - Fixed problem in shader
 
 
 Screenshots:
